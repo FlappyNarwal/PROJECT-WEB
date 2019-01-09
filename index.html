@@ -10,9 +10,11 @@
 
 <body>
     <header>
-        <img src="images/logo-banner.png" alt="logo">
-        <button type="button">filter</button>
         <section>
+            <img src="images/logo-banner.png" alt="Het Eurostar logo">
+            <button type="button">filter</button>
+        </section>
+        <section id="filterMenu">
             <form>
                 <fieldset>
                     <legend>Kies een sfeer (meerdere antwoorden mogelijk)</legend>
@@ -33,28 +35,35 @@
         </section>
         <nav>
             <ul>
-                <li>Overzicht</li>
-                <li>Aanbevolen</li>
-                <li>Beoordeling</li>
-                <li>Nieuw</li>
-                <li>Mijn profiel</li>
+                <li><a href="#" class="active">Overzicht</a></li>
+                <li><a href="#">Aanbevolen</a></li>
+                <li><a href="#">Beoordeling</a></li>
+                <li><a href="#">Nieuw</a></li>
+                <li><a href="#">Mijn profiel</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <input type="search">
+        <button id="searchButton"><img src="images/Asset 2.png" alt="gebruik deze knop om de zoekbalk te openen waarmee je naar een verhaal kan zoeken."></button>
         <article>
-            <p>Uitgelicht</p>
+            <p class="highlight">Uitgelicht</p>
             <img src="images/viewport.png" alt="thumbnail">
-            <h1>Hongerwinter</h1>
-            <p>Door Molovich</p>
-            <p><img src="images/Asset%202.png" alt="leesduur">10 minuten</p>
+           <span>
+                <h1>Hongerwinter</h1>
+                <p>Door <b>Molovich</b></p>
+            </span>
+            <section class="dateTime">
+                <p><img src="images/Asset%202.png" alt="leesduur"> 10 minuten </p>
+                <p>28 November 2018</p>
+            </section>
+            <section class="preview">
             <p>Mijn handen en voeten heb ik ingezwachteld tegen de kou. Kranten tegen mijn borst.</p>
             <button type="button">like</button>
             <button type="button">comment</button>
             <button type="button">download</button>
-            <button type="button">Verhaal lezen</button>
+            <button class="lezen" type="button">Verhaal lezen</button>
+            </section>
         </article>
     </main>
 
