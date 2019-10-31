@@ -79,6 +79,7 @@ fieldset {
 label {
     color: white;
     font-weight: 500;
+    cursor: pointer;
 }
 
 form input {
@@ -92,6 +93,7 @@ form input {
     font-size: 1.1em;
     padding: .5em;
     margin-top: .6em;
+    cursor: pointer;
 }
 
 input[type=submit]:hover {
@@ -161,6 +163,7 @@ header nav ul li a:hover {
 }
 
 #notification {
+    display: none;
     background: #fee22f;
     border-radius: 50%;
     padding-top: 0.1em;
@@ -173,6 +176,7 @@ header nav ul li a:hover {
     left: 85%;
     top: 5%;
 }
+
 #searchButton {
     background: none;
     border: none;
@@ -246,6 +250,17 @@ h3 {
 main article div p {
     margin: 0;
     color: #58595D;
+}
+
+article a {
+    text-decoration: none;
+    color: black;
+}
+
+article a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+
 }
 
 main div.dateTime {
@@ -387,6 +402,22 @@ section#verhalen h5 {
     margin-bottom: 1em;
     position: relative;
     display: none;
+}
+
+#verhaalPreview::after {
+    content: 'x';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+
+}
+
+#verhaalPreview:hover::after {
+    cursor: pointer;
+    font-weight: bold;
 }
 
 #verhaalPreview img {
@@ -662,6 +693,14 @@ h3 {
 
     #verhaalPreview {
         left: 40%;
+    }
+
+}
+
+@media (max-width: 64em) {
+    /*Dit is van toepassing op tablet*/
+    main {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }

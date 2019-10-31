@@ -19,7 +19,7 @@ for (var i = 0; i < downloadButton.length; i++) {
 
 
 }
-if (popUp !== null) { //dit is als de popup false is
+if (popUp !== null) { //dit is als de popup bestaat
 
     popUp.addEventListener("click", function () {
         if (preview === false) {
@@ -31,8 +31,12 @@ if (popUp !== null) { //dit is als de popup false is
         }
     });
 
-}
+    document.getElementById("verhaalPreview").addEventListener("click", function () {
+        document.getElementById("verhaalPreview").style.display = "none";
 
+    })
+
+}
 filter.addEventListener("click", function () {
     filter.classList.toggle("active");
     if (filtermenu.style.display === "block") {
