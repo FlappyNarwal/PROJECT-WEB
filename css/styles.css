@@ -1,40 +1,128 @@
-body{
+body {
+    font-family: 'Didact Gothic', sans-serif;
+    /*font gebruik voor de pagina*/
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*minimaal 16px houd hieraan, dit is leesbaarheid*/
 }
 
-header{
+header {
+    /*deze kleur gebruikt Eurostar ook*/
     background-color: #162038;
 }
 
-header section:first-of-type{
+header div:first-of-type {
+    /*Eerste gebruik van div, zorgt voor positionering logo en filterknop*/
     display: flex;
     justify-content: space-between;
 }
-header section:first-of-type img{
+
+header div:first-of-type img {
+    /*Eerste gebruik van img in een div*/
     margin-left: 1em;
 }
 
-header section:first-of-type button{
+.active,
+header div:first-of-type img:hover {
+    /*hover button*/
+    background: #515d77;
+}
+
+header div:first-of-type button {
+    /*Eerste gebruik button in een div filterknop*/
+    /*https://developer.mozilla.org/nl/docs/Web/CSS/cursor*/
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+button {
+    font-family: 'Didact Gothic';
+    background: none;
+    border-style: none;
+    cursor: pointer;
+}
+
+#filterMenu {
+    /*Dit menu komt tevoorschijn als je op de filterknop drukt*/
+    display: none;
+    text-align: center;
+    margin-left: 1em;
     margin-right: 1em;
 }
 
-header section#filterMenu{
-    display: none;
+section h1 {
+    /*deze kleur komt van Eurostar website*/
+    color: #debc32;
+    font-weight: 600;
 }
 
+legend {
+    color: #debc32;
+    font-size: 0.9em
+}
 
+legend::after {
+    /*lijn onder legend, bron: Ramon Meijers - student. */
+    border-bottom: 1px solid #4a5968;
+    width: 20em;
+    border-bottom-width: 0.2em;
+    display: block;
+    content: " ";
+}
 
-header nav ul{
+fieldset {
+    border: none;
+}
+
+label {
+    color: white;
+    font-weight: 500;
+}
+
+form input {
+    background-color: #fee22f;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #debc32 3px solid;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #58595D;
+    font-size: 1.1em;
+    padding: .5em;
+    margin-top: .6em;
+}
+
+input[type=submit]:hover {
+    background-color: #ffeb6b;
+    cursor: pointer;
+}
+
+form button:hover {
+    /*meer op knopjes, maak duidelijk onderscheid tussen klikbaar en afbeeldingen, let op states (active,hover, etc.)*/
+    text-decoration: underline;
+}
+
+form button {
+    color: white;
+    background-image: url(../images/ongedaanmaken.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-size: 8%;
+}
+
+header nav ul {
+    /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding:0;
-
+    padding: 0;
 }
 
-header nav ul li a{
+header a {
     font-weight: 300;
     font-size: 80%;
     background: #2f4260;
@@ -46,15 +134,15 @@ header nav ul li a{
     margin-left: 0.0625em;
     margin-right: 0.0625em;
     position: relative;
-
+    /*zorgt ervoor dat het streepje op geselecteerde item blijft. Bron: Ramon Meijers - student */
 }
 
-header nav ul li a:hover{
+header nav ul li a:hover {
     background-color: #485d75;
-
 }
 
-.active:before{
+.active:before {
+    /*gele lijn boven actieve pagina, Bron: Ramon Meijers - student*/
     content: "";
     border-top: .2em #fee22f solid;
     position: absolute;
@@ -63,33 +151,73 @@ header nav ul li a:hover{
     left: 0;
 }
 
-.active{
+.active {
+    /*achtergrond kleur knop actieve pagina*/
     background-color: #485d75;
 }
 
-main button#searchButton{
+#notification {
+    background: #fee22f;
+    border-radius: 50%;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    /*https://stackoverflow.com/questions/15782078/bring-element-to-front-using-css*/
+    z-index: 1;
+    position: absolute;
+    left: 85%;
+    top: 5%;
+}
+
+#searchButton {
     background: none;
     border: none;
     position: fixed;
     right: 10%;
     bottom: 5%;
+    width: 8em;
+    height: 8em;
+    z-index: 1;
+    /*vooraan de pagina geplaatst*/
 }
 
+input[type=search] {
+    /*zoekbalk is in mobiele versie niet zichtbaar*/
+    display: none;
+}
 
-main article{
-    border: solid .1em grey;
+main {
+    padding: 1em;
+}
+
+article {
+    /*de verhalenblokjes */
+    width: 300px;
+}
+
+main article {
+    border: solid .1em #d1d0cd;
     border-radius: 10px;
     padding: .9em;
     padding-top: 0;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
     position: relative;
 }
 
-main article p.highlight{
+main article img {
+    width: 300px;
+    height: 200px;
+}
+
+.highlight {
+    /*aanbevolen*/
     position: absolute;
     right: 0;
-    top:0;
+    top: 0;
     background-color: #27b6c9;
     color: white;
     font-weight: 700;
@@ -98,19 +226,24 @@ main article p.highlight{
     border-radius: 10px;
 }
 
-main article span{
-    color: #58595D
-}
-
-
-main article span h1{
+main article div h2 {
+    color: #58595D;
     margin-bottom: 0;
 }
-main article span p{
-    margin: 0;
+
+h3 {
+    margin-bottom: 0;
+    color: #58595D;
+    font-weight: 200;
+    grid-column: span 2;
 }
 
-main section.dateTime{
+main article div p {
+    margin: 0;
+    color: #58595D;
+}
+
+main div.dateTime {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,23 +254,27 @@ main section.dateTime{
     border-bottom: 1.5px rgb(192, 192, 192) solid;
 }
 
-
-main section.dateTime img{
+main div.dateTime img {
     width: 1.5em;
+    height: 1.5em;
     vertical-align: middle;
 }
 
-main section.preview{
+main section.preview {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr, 1fr;
+    /*grid bestaat uit 4 "delen"*/
 }
 
-main section.preview p{
+main section.preview p {
+    /*preview tekst beslaat 3 "rijen"*/
     grid-row: span 3;
 }
 
-main article button.lezen{
+.lezen {
+    font-family: 'Didact Gothic';
     grid-column: span 2;
+    /*knop spant over 2 grid columns*/
     background-color: #fee22f;
     text-transform: uppercase;
     border: none;
@@ -148,4 +285,361 @@ main article button.lezen{
     font-size: 1.1em;
     padding: .5em;
     margin-top: .6em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.lezen:hover {
+    grid-column: span 2;
+    background-color: #ffeb6b;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #debc32 3px solid;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #58595D;
+    font-size: 1.1em;
+    padding: .5em;
+    margin-top: .6em;
+}
+
+main article section button:nth-of-type(1) {
+    /*per button wordt een andere afbeelding gebruikt, https://www.w3schools.com/cssref/sel_nth-of-type.asp*/
+    background-image: url(../images/like.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+main article section button:nth-of-type(2) {
+    background-image: url(../images/comment.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+main article section button:nth-of-type(3) {
+    background-image: url(../images/download.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+section#verhalen h4 {
+    background-color: #162038;
+    color: #fee22f;
+    padding-top: 2em;
+    padding-bottom: none;
+    margin-bottom: none;
+    grid-column: span 1;
+    text-align: center;
+}
+
+section#verhalen {
+    background-color: #162038;
+    display: grid;
+    /*1 thumbnail per column*/
+    grid-template-columns: repeat(1, 3fr);
+    column-gap: 1em;
+    align-items: center;
+    justify-items: center;
+}
+
+.aanbevolenVerhaal {
+    /*        display: block;*/
+    width: 18.75em;
+    height: 12.5em;
+}
+
+section#verhalen div {
+    position: relative;
+}
+
+section#verhalen h5 {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+#verhaalPreview {
+    border: solid .1em #d1d0cd;
+    border-radius: 10px;
+    padding: .9em;
+    padding-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    display: none;
+}
+
+#verhaalPreview img {
+    width: 300px;
+    height: 200px;
+}
+
+#verhaalPreview h2 {
+    color: #58595D;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-bottom: 0;
+    color: #58595D;
+    font-weight: 200;
+    grid-column: span 2;
+}
+
+#verhaalPreview p {
+    margin: 0;
+    color: #58595D;
+}
+
+#verhaalPreview .dateTime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+
+    height: 40px;
+    color: rgb(192, 192, 192);
+    border-bottom: 1.5px rgb(192, 192, 192) solid;
+}
+
+#verhaalPreview .dateTime img {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+#verhaalPreview .preview {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    /*grid bestaat uit 4 "delen"*/
+}
+
+#verhaalPreview .preview p {
+    grid-row: span 3;
+}
+
+.lezen {
+    grid-column: span 2;
+    /*knop spant over 2 grid columns*/
+    background-color: #fee22f;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #debc32 3px solid;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #58595D;
+    font-size: 1.1em;
+    padding: .5em;
+    margin-top: .6em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.lezen:hover {
+    grid-column: span 2;
+    background-color: #ffeb6b;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #debc32 3px solid;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #58595D;
+    font-size: 1.1em;
+    padding: .5em;
+    margin-top: .6em;
+}
+
+#verhaalPreview button:nth-of-type(1) {
+    background-image: url(../images/like.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#verhaalPreview button:nth-of-type(2) {
+    background-image: url(../images/comment.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#verhaalPreview button:nth-of-type(3) {
+    background-image: url(../images/download.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#verhaalPreview {
+    position: fixed;
+    top: 30%;
+    z-index: 1;
+    background: white;
+    left: 11%;
+}
+
+@media (min-width: 50em) {
+    /*Dit is van toepassing op desktop*/
+    form {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #filterMenu {
+        /*zorgt dat de content in het midden blijft en deze ruimte vult. Bron: Ramon Meijers - student*/
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section h1 {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    legend::after {
+        width: 49em;
+    }
+
+    fieldset {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    form input[type=submit] {
+        margin-left: auto;
+    }
+
+    form button {
+        padding-right: 2%;
+        margin-left: auto;
+    }
+
+    #notification {
+        z-index: 1;
+        position: absolute;
+        left: 67%;
+        top: 6%;
+    }
+
+    header div img:first-of-type {
+        margin-left: 12.12em;
+        margin-right: 12.12em;
+
+    }
+
+    header a {
+        font-weight: 700;
+        font-size: 80%;
+        background: #2f4260;
+        color: white;
+        text-decoration: none;
+        width: 11em;
+        margin-left: 12.12em;
+        margin-right: 12.12em;
+        text-align: center;
+        display: block;
+        padding: 0.625em 0.3125em;
+        margin-left: 0.0625em;
+        margin-right: 0.0625em;
+        position: relative;
+    }
+
+    input[type=search] {
+        /*deze zoekbar verschijnt alleen op de desktop versie*/
+        border-style: solid;
+        border-color: #d1d0cd;
+        background: url(../images/zoekbar.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 2em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: center;
+        border-radius: 5em;
+    }
+
+    #searchButton {
+        /*De zoekknop verdwijnt op de desktop versie*/
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1em;
+        align-items: center;
+        justify-items: center;
+        /*Op dekstop komen er maximaal 3 verhalen naast elkaar*/
+    }
+
+    #verhaal {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section#verhalen h4 {
+        background-color: #162038;
+        color: #fee22f;
+        padding-top: 2em;
+        padding-bottom: none;
+        margin-bottom: none;
+        grid-column: span 3;
+        text-align: center;
+    }
+
+    section#verhalen {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #verhaalPreview h2 {
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-weight: 200;
+        grid-column: span 2;
+    }
+
+    #verhaalPreview {
+        left: 40%;
+    }
+
 }

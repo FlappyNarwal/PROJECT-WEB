@@ -5,37 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <!--https://fonts.google.com/?category=Sans+Serif,Display&selection.family=Didact+Gothic-->
     <title>Eurostar</title>
 </head>
 
 <body>
     <header>
-        <section>
+        <!--hierin bevindt zich het logo en de filterknop-->
+        <div>
             <img src="images/logo-banner.png" alt="Het Eurostar logo">
-            <button type="button">filter</button>
-        </section>
+            <button type="button" id="filterknop"><img src="images/filter_1.png" alt="filterknop"></button>
+        </div>
+
         <section id="filterMenu">
+            <!--filtermenu-->
+            <h1>Filteropties</h1>
+            <!-- https://www.w3schools.com/tags/tag_fieldset.asp-->
             <form>
                 <fieldset>
                     <legend>Kies een sfeer (meerdere antwoorden mogelijk)</legend>
-                    <input type="checkbox" name="sfeer1" value="liefde"> Liefde
-                    <input type="checkbox" name="sfeer2" value="verdriet"> Verdriet
-                    <input type="checkbox" name="sfeer3" value="vrolijk"> Vrolijk
-                    <input type="checkbox" name="sfeer4" value="spannend"> Spannend
-                    <input type="checkbox" name="sfeer5" value="frustratie"> Frustratie
-                    <input type="checkbox" name="sfeer6" value="kunstzinnig"> Kunstzinnig
+                    <label><input type="checkbox" name="sfeer1" value="liefde"> Liefde</label>
+                    <label><input type="checkbox" name="sfeer2" value="verdriet"> Verdriet</label>
+                    <label><input type="checkbox" name="sfeer3" value="vrolijk"> Vrolijk</label>
+                    <label><input type="checkbox" name="sfeer4" value="spannend"> Spannend</label>
+                    <label><input type="checkbox" name="sfeer5" value="frustratie"> Frustratie</label>
+                    <label> <input type="checkbox" name="sfeer6" value="kunstzinnig"> Kunstzinnig</label>
                 </fieldset>
                 <fieldset>
                     <legend>Leesduur</legend>
-                    <input type="range" name="" min="0" max="15">
+                    <input type="range" name="leesduur" min="0" max="15">
                 </fieldset>
-                <input type="submit" value="submit">
+                <input type="submit" value="filters toepassen">
                 <button type="reset">Ongedaan maken</button>
             </form>
         </section>
         <nav>
+            <div id="notification"></div>
+            <!--notificatie verschijnt als microinteractie-->
             <ul>
-                <li><a href="#" class="active">Overzicht</a></li>
+                <li><a href="index.html" class="active">Overzicht</a></li>
+                <!--huidige pagina-->
                 <li><a href="#">Aanbevolen</a></li>
                 <li><a href="#">Beoordeling</a></li>
                 <li><a href="#">Nieuw</a></li>
@@ -43,29 +53,89 @@
             </ul>
         </nav>
     </header>
+    <!--form & submit, label dit moet-->
+    <input type="search" placeholder="Zoeken op steekwoorden">
+    <!--zoekbar desktop versie-->
+
 
     <main>
-        <button id="searchButton"><img src="images/Asset 2.png" alt="gebruik deze knop om de zoekbalk te openen waarmee je naar een verhaal kan zoeken."></button>
+        <!-- https://stackoverflow.com/questions/8683528/embed-image-in-a-button-element-->
+        <button id="searchButton"><img src="images/zoek.svg" alt="gebruik deze knop om de zoekbalk te openen waarmee je naar een verhaal kan zoeken."></button>
+        <!--zoekknop mobiel-->
+
         <article>
             <p class="highlight">Uitgelicht</p>
-            <img src="images/viewport.png" alt="thumbnail">
-           <span>
-                <h1>Hongerwinter</h1>
-                <p>Door <b>Molovich</b></p>
-            </span>
-            <section class="dateTime">
-                <p><img src="images/Asset%202.png" alt="leesduur"> 10 minuten </p>
+            <!--uitgelicht verhaal-->
+            <img src="images/viewport%20uitgelicht.svg" alt="thumbnail">
+            <div>
+                <h2>Hongerwinter</h2>
+                <p>Door <a href="https://nurksmagazine.nl/author/molovich/"><b>Molovich</b></a></p>
+            </div>
+            <div class="dateTime">
+                <p><img src="images/Asset2.png" alt="leesduur"> 10 minuten </p>
                 <p>28 November 2018</p>
-            </section>
+            </div>
             <section class="preview">
-            <p>Mijn handen en voeten heb ik ingezwachteld tegen de kou. Kranten tegen mijn borst.</p>
-            <button type="button">like</button>
-            <button type="button">comment</button>
-            <button type="button">download</button>
-            <button class="lezen" type="button">Verhaal lezen</button>
+                <h3>Korte preview</h3>
+                <p>Mijn handen en voeten heb ik ingezwachteld tegen de kou. Kranten tegen mijn borst.</p>
+                <button type="button"></button>
+                <button type="button"></button>
+                <button class="DownloadKnop" type="button"></button>
+                <!--<button class="lezen" type="button">Verhaal lezen</button>-->
+                <!-- https://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button-->
+                <!--deze link neemt de styling van de eerder gemaakte button over-->
+                <a href="verhaal.html" class="lezen">Verhaal lezen</a>
+            </section>
+        </article>
+
+        <article>
+            <img src="images/viewport2.svg" alt="thumbnail">
+            <div>
+                <h2>Vrije Versvorm</h2>
+               <p>Door <a href="https://nurksmagazine.nl/author/molovich/"><b>Molovich</b></a></p>
+            </div>
+            <div class="dateTime">
+                <p><img src="images/Asset2.png" alt="leesduur"> 5 minuten </p>
+                <p>3 Februari 2018</p>
+            </div>
+            <section class="preview">
+                <h3>Korte preview</h3>
+                <p>Gemeenteblik, Draaiende wielen stoppen, Schimmen lopen van en naar, Zoonlief droomt...</p>
+                <button type="button"></button>
+                <button type="button"></button>
+                <button class="DownloadKnop" type="button"></button>
+                <button class="lezen" type="button">Verhaal lezen</button>
+            </section>
+        </article>
+
+        <article>
+            <img src="images/viewport3.svg" alt="thumbnail">
+            <div>
+                <h2>Kinderlied</h2>
+               <p>Door <a href="https://nurksmagazine.nl/author/molovich/"><b>Molovich</b></a></p>
+            </div>
+            <div class="dateTime">
+                <p><img src="images/Asset2.png" alt="leesduur"> 5 minuten </p>
+                <p>30 Maart 2018</p>
+            </div>
+            <section class="preview">
+                <h3>Korte preview</h3>
+                <p>Molovichje ging op reis, tiereliereliere Molovichje ging op reis, tierelierelom Met z’n...</p>
+                <button type="button"></button>
+                <button type="button"></button>
+                <button class="DownloadKnop" type="button"></button>
+                <button class="lezen" type="button">Verhaal lezen</button>
             </section>
         </article>
     </main>
+    <script src="js/eurostar.js"></script>
+
+
+
+    <!--maak de verhalenblokjes schalend, laat ze mee groeien-->
+    <!--minder witruimte aan de zijkanten-->
+    <!--breakpoint eerder instellen, beter uitwerken op meer plekken-->
+    <!--Filters stylen-->
 
 </body>
 

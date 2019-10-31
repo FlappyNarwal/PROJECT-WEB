@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet"> <!--https://fonts.google.com/?category=Sans+Serif,Display&selection.family=Didact+Gothic-->
+    <title>Eurostar</title>
+</head>
+
+<body>
+    <header>
+        <!--hierin bevindt zich het logo en de filterknop-->
+        <div>
+            <img src="images/logo-banner.png" alt="Het Eurostar logo">
+            <button type="button" id="filterknop"><img src="images/filter_1.png" alt="filterknop"></button>
+        </div>
+
+        <section id="filterMenu">
+            <!--filtermenu-->
+            <h1>Filteropties</h1>
+            <form>
+                <fieldset>
+                    <legend>Kies een sfeer (meerdere antwoorden mogelijk)</legend>
+                    <label><input type="checkbox" name="sfeer1" value="liefde"> Liefde</label>
+                    <label><input type="checkbox" name="sfeer2" value="verdriet"> Verdriet</label>
+                    <label><input type="checkbox" name="sfeer3" value="vrolijk"> Vrolijk</label>
+                    <label><input type="checkbox" name="sfeer4" value="spannend"> Spannend</label>
+                    <label><input type="checkbox" name="sfeer5" value="frustratie"> Frustratie</label>
+                    <label> <input type="checkbox" name="sfeer6" value="kunstzinnig"> Kunstzinnig</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Leesduur</legend>
+                    <input type="range" name="leesduur" min="0" max="15">
+                </fieldset>
+                <input type="submit" value="filters toepassen">
+                <button type="reset">Ongedaan maken</button>
+            </form>
+        </section>
+        <nav>
+            <div id="notification"></div>
+            <ul>
+                <li><a href="index.html">Overzicht</a></li>
+                <!--huidige pagina-->
+                <li><a href="#">Aanbevolen</a></li>
+                <li><a href="#">Beoordeling</a></li>
+                <li><a href="#">Nieuw</a></li>
+                <li><a href="#">Mijn profiel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="gif/verhaal-gif.gif " alt="Verhaal " id="verhaal">
+
+    <section id="verhalen">
+        <h4>Lees verder met nieuwe verhalen...</h4>
+        <div id="popUp">
+            <img src="images/viewport2.svg" alt="aanbevolen verhaal" class="aanbevolenVerhaal">
+            <h5>Vrije Versvorm</h5>
+        </div>
+        <div>
+            <img src="images/viewport3.svg" alt="aanbevolen verhaal" class="aanbevolenVerhaal">
+            <h5>Kinderlied</h5>
+        </div>
+
+        <div>
+            <img src="images/viewport%204.svg" alt="aanbevolen verhaal" class="aanbevolenVerhaal">
+            <h5>Haiku</h5>
+        </div>
+
+    </section>
+
+    <article id="verhaalPreview">
+        <img src="images/viewport2.svg" alt="thumbnail">
+        <div>
+            <h2>Vrije Versvorm</h2>
+            <p>Door <b>Molovich</b></p>
+        </div>
+        <div class="dateTime">
+            <p><img src="images/Asset2.png" alt="leesduur"> 5 minuten </p>
+            <p>3 Februari 2018</p>
+        </div>
+        <section class="preview">
+            <h3>Korte preview</h3>
+            <p>Gemeenteblik, Draaiende wielen stoppen, Schimmen lopen van en naar, Zoonlief droomt...</p>
+            <button type="button"></button>
+            <button type="button"></button>
+            <button class="DownloadKnop" type="button"></button>
+            <button class="lezen" type="button">Verhaal lezen</button>
+        </section>
+    </article>
+
+
+
+    <script src="js/eurostar.js"></script>
+
+</body>
+
+</html>
